@@ -47,7 +47,7 @@ public class GooglePlaces {
     	// Added radius to NearbySearchQuery
         NearbySearchQuery query = new NearbySearchQuery(mApiKey, lat, lon, radius);
         
-        //Added Rankby to Distance
+        //Added Rankby to Distance by Navine
         query.setRanking(Ranking.Prominence);
         
         //Added SetLanguage
