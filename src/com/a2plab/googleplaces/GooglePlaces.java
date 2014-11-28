@@ -309,6 +309,7 @@ public class GooglePlaces {
         mSupportedPlaces.add("car dealer");
         mSupportedPlaces.add("car rental");
         mSupportedPlaces.add("car repair");
+        mSupportedPlaces.add("car_repair");
         mSupportedPlaces.add("car wash");
         mSupportedPlaces.add("casino");
         mSupportedPlaces.add("cemetery");
@@ -331,6 +332,7 @@ public class GooglePlaces {
         mSupportedPlaces.add("funeral home");
         mSupportedPlaces.add("furniture store");
         mSupportedPlaces.add("gas station");
+        mSupportedPlaces.add("gas_station");    
         mSupportedPlaces.add("general contractor");
         mSupportedPlaces.add("grocery or supermarket");
         mSupportedPlaces.add("gym");
@@ -369,6 +371,8 @@ public class GooglePlaces {
         mSupportedPlaces.add("post office");
         mSupportedPlaces.add("real estate agency");
         mSupportedPlaces.add("restaurant");
+        mSupportedPlaces.add("rest room");
+        mSupportedPlaces.add("rest_room");
         mSupportedPlaces.add("roofing contractor");
         mSupportedPlaces.add("rv park");
         mSupportedPlaces.add("school");
@@ -381,6 +385,7 @@ public class GooglePlaces {
         mSupportedPlaces.add("subway station");
         mSupportedPlaces.add("synagogue");
         mSupportedPlaces.add("taxi stand");
+        mSupportedPlaces.add("toilet");
         mSupportedPlaces.add("train station");
         mSupportedPlaces.add("travel agency");
         mSupportedPlaces.add("university");
