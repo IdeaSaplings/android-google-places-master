@@ -9,7 +9,7 @@ import android.location.Location;
 public class NearbySearchQuery extends SearchQuery {
 
 	public enum Ranking {
-		Prominence, Distance
+		prominence, distance
 	};
 
 	/**
@@ -33,7 +33,20 @@ public class NearbySearchQuery extends SearchQuery {
 		setRadius(DEFAULT_RADIUS);
 	}
 
+	/**
+	 * @param apiKey
+	 * @param lat
+	 * @param lon
+	 */
+	public NearbySearchQuery(String apiKey, double lat, double lon, String rankby) {
+		super(apiKey);
+		setLocation(lat, lon);
+		if (rankby.equalsIgnoreCase("distance")){
+			setRanking(Ranking.distance);			
+		}
+	}
 
+	
 	/**
 	 * @param apiKey
 	 * @param lat
@@ -53,7 +66,7 @@ public class NearbySearchQuery extends SearchQuery {
 	
 	//bugfix rankby -> rankBy
 	public NearbySearchQuery setRanking(Ranking ranking) {
-		queryBuilder.addParameter("rankBy", ranking.toString());
+		queryBuilder.addParameter("rankby", ranking.toString());
 		
 		return this;
 	}

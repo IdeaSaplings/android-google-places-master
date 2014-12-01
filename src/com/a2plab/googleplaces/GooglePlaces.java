@@ -48,7 +48,7 @@ public class GooglePlaces {
         NearbySearchQuery query = new NearbySearchQuery(mApiKey, lat, lon, radius);
         
         //Added Rankby to Distance by Navine
-        query.setRanking(Ranking.Prominence);
+        query.setRanking(Ranking.prominence);
         
         //Added SetLanguage
         query.setLanguage("en");
@@ -67,6 +67,42 @@ public class GooglePlaces {
         return getPlaces(query);
     }
 
+// To build query without Radius and RankBy Distance    
+    /**
+     * @param types
+     * @param keyword
+     * @param rankby
+     * @param lat
+     * @param lon
+     * @return
+     * @throws IOException
+     */
+    public Result getNearbyPlaces(List<String> types, String keyword, String rankby, double lat, double lon) throws IOException {
+    	// Added rankby to NearbySearchQuery
+        NearbySearchQuery query = new NearbySearchQuery(mApiKey, lat, lon, rankby);
+        
+        //Added Rankby to Distance by Navine
+        //query.setRanking(Ranking.Prominence);
+        
+        //Added SetLanguage
+        query.setLanguage("en");
+
+        if (types != null) {
+            for (String type : types) {
+                if (isSupportedPlace(type))
+                    query.addType(type);
+            }
+        }
+
+        if (keyword != null && keyword != "") {
+            query.setKeyword(keyword);
+        }
+
+        return getPlaces(query);
+    }
+
+
+    
     /**
      * @param types
      * @param radius
