@@ -17,6 +17,9 @@ public class Place implements GooglePlaceBase {
     protected String id;
 
     @Key
+    protected String place_id;
+    
+    @Key
     protected String name;
 
     @Key
@@ -80,6 +83,14 @@ public class Place implements GooglePlaceBase {
         return reference;
     }
 
+    /**
+     * @return the reference
+     */
+    public String getPlaceId() {
+        return place_id;
+    }
+
+    
     /**
      * @return the icon
      */
