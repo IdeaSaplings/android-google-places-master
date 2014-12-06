@@ -206,6 +206,48 @@ public class GooglePlaces {
         return getPlaces(new TextSearchQuery(mApiKey, searchText, true));
     }
 
+    
+
+    /* ------------------------------------------------------ */
+    /* TEXTSEARCH */
+    /* ------------------------------------------------------ */
+
+    /**
+     * @param types
+     * @param keyword
+     * @param radius
+     * @param lat
+     * @param lon
+     * @return
+     * @throws IOException
+     * 
+     * This method was added by Navine
+     */
+    public Result getTextPlaces(List<String> types, String searchText, int radius, double lat, double lon) throws IOException {
+
+    	
+    	//NearbySearchQuery query = new NearbySearchQuery(mApiKey, lat, lon, radius);
+        
+    	TextSearchQuery query = new TextSearchQuery(mApiKey, searchText, true);
+    	
+        query.setLocation(lat, lon, radius);
+        
+        //Added SetLanguage
+        query.setLanguage("en");
+
+        if (types != null) {
+            for (String type : types) {
+                if (isSupportedPlace(type))
+                    query.addType(type);
+            }
+        }
+
+
+        return getPlaces(query);
+    }
+
+
+    
     /* ------------------------------------------------------ */
     /* RADAR SEARCH */
     /* ------------------------------------------------------ */
@@ -219,14 +261,14 @@ public class GooglePlaces {
     /* ------------------------------------------------------ */
 
     /**
-     * @param reference
+     * @param placeid
      * @return
      * @throws JSONException
      * @throws ClientProtocolException
      * @throws IOException
      */
-    public Result getPlaceDetails(String reference) throws IOException {
-        return getPlaces(new DetailsQuery(this.mApiKey, reference), PlaceDetailsResult.class);
+    public Result getPlaceDetails(String placeid) throws IOException {
+        return getPlaces(new DetailsQuery(this.mApiKey, placeid), PlaceDetailsResult.class);
     }
 
     /**

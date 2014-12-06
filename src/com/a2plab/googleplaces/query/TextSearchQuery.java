@@ -9,6 +9,23 @@ public class TextSearchQuery extends SearchQuery {
 		setQuery(query);
 	}
 
+	
+
+	/*
+	 * Set location and set required parameter "radius" to default value 2500.
+	 * 
+	 * (non-Javadoc)
+	 * 
+	 * @see com.a2plab.googleplaces.query.SearchQuery#setLocation(double,
+	 * double)
+	 */
+	public TextSearchQuery setLocation(double latitude, double longitude, int radius) {
+		super.setLocation(latitude, longitude);
+		setRadius(radius);
+		return this;
+	}
+
+	
 	/*
 	 * Set location and set required parameter "radius" to default value 2500.
 	 * 
