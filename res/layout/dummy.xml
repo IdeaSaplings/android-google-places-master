@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pop_element"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/pop_element_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5sp" >
+
+        <ImageButton
+            android:id="@+id/navigate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:autoLink="web"
+            android:background="@null"
+            android:linksClickable="true"
+            android:paddingBottom="0sp"
+            android:paddingLeft="0sp"
+            android:paddingRight="0sp"
+            android:paddingTop="0sp"/>
+
+        <RelativeLayout
+            android:id="@+id/text_poiview_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp" >
+
+        <TextView
+            android:id="@+id/poi_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Manipal Hospitals"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/poi_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poi_name"
+            android:layout_marginTop="12dp"
+            android:text="W Smithfield, London EC1A 7BE, \nUnited Kingdom"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/poi_local_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poi_address"
+            android:layout_marginTop="10dp"
+            android:autoLink="phone"
+            android:linksClickable="true"
+            android:text="Phone (Local) - 020 7377 7000"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/poi_inter_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poi_local_phone"
+            android:layout_marginTop="3dp"
+            android:autoLink="phone"
+            android:linksClickable="true"
+            android:text="Phone (Inter) - +44 20 7377 7000"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/poi_website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poi_inter_phone"
+            android:layout_marginTop="10dp"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:textStyle="bold|italic" />
+    </RelativeLayout>
+</RelativeLayout>
+</RelativeLayout>
