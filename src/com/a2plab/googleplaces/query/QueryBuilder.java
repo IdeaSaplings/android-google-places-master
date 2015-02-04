@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import android.util.Log;
-
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
@@ -15,7 +13,6 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
-
 
 /**
  * @author Giuseppe Mastroeni - aka: Kataklisma E-Mail: m.giuseppe@a2plab.com
@@ -62,21 +59,22 @@ class QueryBuilder {
 	 * @return
 	 * @throws IOExceptions
 	 */
-	protected HttpRequest generateRequest(Query query) throws IOException  {
-		
-		Log.v("DEBUG", " MYGPS: The URL" + query.getUrl());
+	protected HttpRequest generateRequest(Query query) throws IOException {
 
-		HttpRequest request = createRequestFactory(HTTP_TRANSPORT).buildGetRequest(new GenericUrl(query.getUrl()));
+		// Log.v("DEBUG", " MYGPS: The URL" + query.getUrl());
+
+		HttpRequest request = createRequestFactory(HTTP_TRANSPORT)
+				.buildGetRequest(new GenericUrl(query.getUrl()));
 
 		for (Map.Entry<String, String> entry : parameters.entrySet()) {
 			request.getUrl().put(entry.getKey(), entry.getValue());
-			Log.v("DEBUG", " MYGPS: The Entry Key and Value" + entry.getKey() + " " + entry.getValue());
+			// Log.v("DEBUG", " MYGPS: The Entry Key and Value" + entry.getKey()
+			// + " " + entry.getValue());
 
 		}
-		
-		Log.v("DEBUG", " MYGPS: The Request" + request.getUrl().toString());
 
-		
+		// Log.v("DEBUG", " MYGPS: The Request" + request.getUrl().toString());
+
 		return request;
 	}
 
@@ -84,7 +82,8 @@ class QueryBuilder {
 	 * @param transport
 	 * @return
 	 */
-	private static HttpRequestFactory createRequestFactory(final HttpTransport transport) {
+	private static HttpRequestFactory createRequestFactory(
+			final HttpTransport transport) {
 
 		return transport.createRequestFactory(new HttpRequestInitializer() {
 			public void initialize(HttpRequest request) {
